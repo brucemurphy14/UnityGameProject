@@ -7,12 +7,13 @@ public class PlayerController : MonoBehaviour
     public float horizontalInput;
     public float verticalInput;
     public float speed = 10.0f;
-    public float xBoundary = 20.0f;
+    public float xBoundary = 15.0f;
+    private AudioSource gameAudio;
    
     // Start is called before the first frame update
     void Start()
     {
-        
+        gameAudio = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
