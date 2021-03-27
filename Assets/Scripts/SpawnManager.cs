@@ -11,7 +11,7 @@ public class SpawnManager : MonoBehaviour
     public TextMeshProUGUI gameOverText;
     public GameObject titleScreen;
     public Button restartButton;
-    public bool isGameActive;
+    public bool isGameActive = true;
     private float SpawnRangeX = 15;
     private float SpawnPosZ = 10;
     private float startDelay = 2;

@@ -575,7 +575,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 19f89c6e740e7447f9e12a8310d3e973, type: 3}
+  m_audioClip: {fileID: 8300000, guid: d65707d0dde556441b074e7e98afff15, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -679,6 +679,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb5f221265efe7a48b2dac3ae9b7331c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fruitSound: {fileID: 8300000, guid: 52320e590bf774734a288886eba557ba, type: 3}
+  rockSound: {fileID: 8300000, guid: 7e26c9daf4c32483b9c2790e662d3f1b, type: 3}
 --- !u!114 &685481442
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -694,7 +696,6 @@ MonoBehaviour:
   horizontalInput: 0
   verticalInput: 0
   speed: 10
-  xBoundary: 20
 --- !u!65 &685481443
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -734,7 +735,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 52320e590bf774734a288886eba557ba, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 79e6baad2fd414b82a6d49ce1568d2e5, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1

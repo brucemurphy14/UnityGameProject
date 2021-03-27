@@ -10,6 +10,7 @@ TagManager:
   - Peanut
   - Watermelon
   - Bad
+  - Fruit
   layers:
   - Default
   - TransparentFX

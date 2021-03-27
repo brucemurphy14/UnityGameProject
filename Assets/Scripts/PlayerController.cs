@@ -7,18 +7,17 @@ public class PlayerController : MonoBehaviour
     public float horizontalInput;
     public float verticalInput;
     public float speed = 10.0f;
-    public float xBoundary = 15.0f;
-    private AudioSource gameAudio;
-   
+    private float xBoundary = 15.0f;
+
     // Start is called before the first frame update
     void Start()
     {
-        gameAudio = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
     void Update()
     {
+
         if (transform.position.x < -xBoundary)
         {
             transform.position = new Vector3(-xBoundary, transform.position.y, transform.position.z);
