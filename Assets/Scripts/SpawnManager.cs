@@ -10,17 +10,20 @@ public class SpawnManager : MonoBehaviour
     public GameObject[] fruitPrefabs;
     public TextMeshProUGUI gameOverText;
     public GameObject titleScreen;
-    public Button restartButton;
+    public Button mainMenuButton;
     public bool isGameActive = true;
+    public TextMeshProUGUI scoreText;
+    private int score;
     private float SpawnRangeX = 15;
     private float SpawnPosZ = 10;
     private float startDelay = 2;
     private float spawnInterval = 1.5f;
+    private AudioSource gameAudio;
+    public AudioClip rockSound;
 
     // Start is called before the first frame update
     void Start()
     {
-        
 
         //gameOverText.gameObject.SetActive(true);
     }
@@ -39,6 +42,12 @@ public class SpawnManager : MonoBehaviour
         }
     }
 
+    public void UpdateScore(int scoreToAdd)
+    {
+        score += scoreToAdd;
+        scoreText.text = "Score: " + score;
+    }
+
     public void StartGame()
     {
         InvokeRepeating("SpawnRandomFruit", startDelay, spawnInterval);
@@ -49,13 +58,23 @@ public class SpawnManager : MonoBehaviour
 
     public void GameOver()
     {
-        restartButton.gameObject.SetActive(true);
         gameOverText.gameObject.SetActive(true);
+        mainMenuButton.gameObject.SetActive(true);
+        //mainMenuButton.gameObject.SetActive(true);
         isGameActive = false;
     }
 
-    public void RestartGame()
+    public void MainMenu()
     {
+        
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+
+        /*
+        gameOverText.gameObject.SetActive(false);
+        restartButton.gameObject.SetActive(false);
+        mainMenuButton.gameObject.SetActive(false);
+
+        StartGame();
+        */
     }
 }

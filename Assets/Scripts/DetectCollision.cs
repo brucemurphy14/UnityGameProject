@@ -9,15 +9,12 @@ public class DetectCollision : MonoBehaviour
     private AudioSource gameAudio;
     public AudioClip fruitSound;
     public AudioClip rockSound;
-
-
+    
     // Start is called before the first frame update
     void Start()
     {
         spawnManager = GameObject.Find("Spawn Manager").GetComponent<SpawnManager>();
         gameAudio = GetComponent<AudioSource>();
-
-
     }
 
     // Update is called once per frame
@@ -29,10 +26,29 @@ public class DetectCollision : MonoBehaviour
     // Destroying 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Fruit"))
+        if (other.gameObject.CompareTag("Lemon"))
         {
             gameAudio.PlayOneShot(fruitSound, 1.0f);
             Destroy(other.gameObject);
+            spawnManager.UpdateScore(5);
+        }
+        else if (other.gameObject.CompareTag("Peach"))
+        {
+            gameAudio.PlayOneShot(fruitSound, 1.0f);
+            Destroy(other.gameObject);
+            spawnManager.UpdateScore(5);
+        }
+        else if (other.gameObject.CompareTag("Watermelon"))
+        {
+            gameAudio.PlayOneShot(fruitSound, 1.0f);
+            Destroy(other.gameObject);
+            spawnManager.UpdateScore(15);
+        }
+        else if (other.gameObject.CompareTag("Peanut"))
+        {
+            gameAudio.PlayOneShot(fruitSound, 1.0f);
+            Destroy(other.gameObject);
+            spawnManager.UpdateScore(10);
         }
         else if (gameObject.CompareTag("Bad"))
         {
@@ -43,19 +59,26 @@ public class DetectCollision : MonoBehaviour
             {
                 Destroy(rock);
             }
-            GameObject[] fruitDestroyer = GameObject.FindGameObjectsWithTag("Fruit");
-            foreach (GameObject fruit in fruitDestroyer)
+            GameObject[] lemonDestroyer = GameObject.FindGameObjectsWithTag("Lemon");
+            foreach (GameObject lemon in lemonDestroyer)
             {
-                Destroy(fruit);
+                Destroy(lemon);
+            }
+            GameObject[] peachDestroyer = GameObject.FindGameObjectsWithTag("Peach");
+            foreach (GameObject peach in peachDestroyer)
+            {
+                Destroy(peach);
+            }
+            GameObject[] watermelonDestroyer = GameObject.FindGameObjectsWithTag("Watermelon");
+            foreach (GameObject watermelon in watermelonDestroyer)
+            {
+                Destroy(watermelon);
+            }
+            GameObject[] peanutDestroyer = GameObject.FindGameObjectsWithTag("Peanut");
+            foreach (GameObject peanut in peanutDestroyer)
+            {
+                Destroy(peanut);
             }
         }
     }
-
-
-    /** void OnTriggerEnter(Collider other)
-    {
-        Debug.Log("Game over!");
-        Destroy(gameObject);
-        Destroy(other.gameObject);
-    }*/
 }
