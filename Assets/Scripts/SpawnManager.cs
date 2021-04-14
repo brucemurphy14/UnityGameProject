@@ -10,6 +10,7 @@ public class SpawnManager : MonoBehaviour
     public GameObject[] fruitPrefabs;
     public TextMeshProUGUI gameOverText;
     public GameObject titleScreen;
+    //public GameObject gameScore;
     public Button mainMenuButton;
     public bool isGameActive = true;
     public TextMeshProUGUI scoreText;
@@ -50,9 +51,10 @@ public class SpawnManager : MonoBehaviour
 
     public void StartGame()
     {
+        
         InvokeRepeating("SpawnRandomFruit", startDelay, spawnInterval);
         isGameActive = true;
-
+        
         titleScreen.gameObject.SetActive(false);
     }
 
